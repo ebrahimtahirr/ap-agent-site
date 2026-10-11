@@ -1,6 +1,6 @@
 # Progress: ap-agent-site
 
-Status: built, tested, ready to publish (see the final report for the live URL once deployed).
+Status: LIVE at https://ebrahimtahirr.github.io/ap-agent-site/ (repo ebrahimtahirr/ap-agent-site, deployed by GitHub Actions on every push to main).
 
 Done: scaffold; mockup CSS ported verbatim; all sections; hero animation; tolerance calculator; 8-step pipeline; 7-case demo with real
 invoices (data from tools/build_site_demo.py in the AP repo); chart and tables; prerendered HTML (readable without JS); light/dark; scroll-in;
