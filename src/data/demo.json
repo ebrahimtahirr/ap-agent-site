@@ -1,0 +1,462 @@
+[
+ {
+  "id": "clean",
+  "title": "Clean match",
+  "sub": "Everything lines up",
+  "image": "demo/clean.png",
+  "imageW": 1100,
+  "imageH": 1424,
+  "vendor": "Composite Materials Corp",
+  "invoice": "CMC-2026-1885",
+  "po": "PO-71463",
+  "total": "$1,832.86",
+  "units": 15,
+  "decision": {
+   "action": "auto_clear",
+   "type": "none",
+   "path": "reasoning",
+   "reason": "Invoice CMC-2026-1885 matches the PO perfectly with no variances: amount variance is $0.00 (0.0000%), within tolerance, and quantity variance is no with all 15 units matching both PO and receipt."
+  },
+  "steps": [
+   {
+    "s": "p",
+    "t": "PDF attached, logged"
+   },
+   {
+    "s": "p",
+    "t": "15 units, $1,832.86"
+   },
+   {
+    "s": "p",
+    "t": "Exact vendor match, QuickBooks ID 92"
+   },
+   {
+    "s": "p",
+    "t": "PO-71463 on file, 15 received"
+   },
+   {
+    "s": "p",
+    "t": "$0.00 difference"
+   },
+   {
+    "s": "p",
+    "t": "15 billed, 15 received"
+   },
+   {
+    "s": "p",
+    "t": "No earlier twin"
+   }
+  ],
+  "outcome": {
+   "kind": "pay",
+   "title": "Paid automatically",
+   "text": "Bill created in QuickBooks. No human touched it."
+  },
+  "hero": {
+   "lines": [
+    {
+     "d": "Industrial solvent, 20L drum",
+     "a": "436.44"
+    },
+    {
+     "d": "Epoxy resin kit, 5 gal",
+     "a": "281.96"
+    },
+    {
+     "d": "Corrosion inhibitor concentrate, 55 gal",
+     "a": "101.24"
+    },
+    {
+     "d": "Protective coating, 1 gal",
+     "a": "128.82"
+    }
+   ],
+   "more": 4,
+   "checks": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "id": "tol",
+  "title": "Over tolerance",
+  "sub": "Billed above the PO",
+  "image": "demo/tol.png",
+  "imageW": 1100,
+  "imageH": 850,
+  "vendor": "Enviro Clean Products",
+  "invoice": "4719453",
+  "po": "PO-66915",
+  "total": "$1,226.36",
+  "units": 15,
+  "decision": {
+   "action": "escalate",
+   "type": "amount_variance",
+   "path": "reasoning",
+   "reason": "Invoice amount of $1,226.36 exceeds the PO amount of $1,087.85 by $138.51 (12.73%), which is outside the 1% tolerance limit and $50 dollar cap. Quantity matches PO at 15 units with no variance. The amount variance is not within tolerance and requires escalation."
+  },
+  "steps": [
+   {
+    "s": "p",
+    "t": "PDF attached, logged"
+   },
+   {
+    "s": "p",
+    "t": "15 units, $1,226.36"
+   },
+   {
+    "s": "p",
+    "t": "Exact vendor match, QuickBooks ID 111"
+   },
+   {
+    "s": "p",
+    "t": "PO-66915 on file, PO is $1,087.85"
+   },
+   {
+    "s": "f",
+    "t": "$138.51 over (12.73%). Allowed: $10.88"
+   },
+   {
+    "s": "p",
+    "t": "15 billed, 15 received"
+   },
+   {
+    "s": "p",
+    "t": "No earlier twin"
+   }
+  ],
+  "outcome": {
+   "kind": "hold",
+   "title": "Sent to a person",
+   "text": "Amount is $138.51 (12.73%) above the PO: freight and sales tax the PO does not include. The reviewer sees the variance and the charges."
+  },
+  "hero": {
+   "lines": [
+    {
+     "d": "Protective coating, 1 gal",
+     "a": "81.34"
+    },
+    {
+     "d": "pH buffer solution, 1L",
+     "a": "57.60"
+    },
+    {
+     "d": "Freight / Shipping",
+     "a": "95.00"
+    },
+    {
+     "d": "Sales Tax (8.0%)",
+     "a": "43.51"
+    }
+   ],
+   "more": 9,
+   "checks": [
+    1,
+    1,
+    0,
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "id": "dup",
+  "title": "Duplicate",
+  "sub": "Resent with a new number",
+  "image": "demo/dup.png",
+  "imageW": 1100,
+  "imageH": 850,
+  "vendor": "Global Bearing Corporation",
+  "invoice": "GBC-2026-8445A",
+  "po": "PO-78728",
+  "total": "$176.26",
+  "units": 9,
+  "decision": {
+   "action": "escalate",
+   "type": "duplicate_submission",
+   "path": "duplicate_review",
+   "reason": "Suspected duplicate of GBC-2026-8445. Claude: likely the same bill. Both invoices reference the same PO-78728, have identical line items and amounts ($176.26), and are dated only 7 days apart (2026-10-14 vs 2026-10-21), indicating the same bill submitted twice with a modified invoice ID."
+  },
+  "steps": [
+   {
+    "s": "p",
+    "t": "PDF attached, logged"
+   },
+   {
+    "s": "p",
+    "t": "9 units, $176.26"
+   },
+   {
+    "s": "p",
+    "t": "Exact vendor match, QuickBooks ID 119"
+   },
+   {
+    "s": "p",
+    "t": "PO-78728 on file, 9 received"
+   },
+   {
+    "s": "p",
+    "t": "$0.00 difference"
+   },
+   {
+    "s": "p",
+    "t": "9 billed, 9 received"
+   },
+   {
+    "s": "f",
+    "t": "Same vendor, amount and PO as GBC-2026-8445, dated 7 days earlier"
+   }
+  ],
+  "outcome": {
+   "kind": "hold",
+   "title": "Held as a duplicate",
+   "text": "A person confirms whether GBC-2026-8445 was already paid. Different invoice number, same bill."
+  },
+  "hero": {
+   "lines": [
+    {
+     "d": "Aluminium extrusion 40x40, 3 m",
+     "a": "14.09"
+    },
+    {
+     "d": "Gate valve 2\" bronze",
+     "a": "24.97"
+    },
+    {
+     "d": "Ball bearing 6205-2RS",
+     "a": "14.88"
+    },
+    {
+     "d": "Precision shaft 40 mm x 1 m",
+     "a": "24.90"
+    }
+   ],
+   "more": 5,
+   "checks": [
+    1,
+    1,
+    1,
+    1,
+    0
+   ]
+  }
+ },
+ {
+  "id": "vendor",
+  "title": "Unknown vendor",
+  "sub": "Not in the vendor master",
+  "image": "demo/vendor.png",
+  "imageW": 1100,
+  "imageH": 1424,
+  "vendor": "Orchard Bay Hydraulics LLC",
+  "invoice": "6915035",
+  "po": "PO-14868",
+  "total": "$1,034.35",
+  "units": 23,
+  "decision": {
+   "action": "escalate",
+   "type": "unrecognized_vendor",
+   "path": "vendor_check",
+   "reason": "Vendor name \"Orchard Bay Hydraulics LLC\" is not a known name for any vendor in the vendor list, so the invoice was not checked or paid. A person must confirm which vendor this is (or add a new vendor); the confirmed name is then remembered."
+  },
+  "steps": [
+   {
+    "s": "p",
+    "t": "PDF attached, logged"
+   },
+   {
+    "s": "p",
+    "t": "23 units, $1,034.35"
+   },
+   {
+    "s": "f",
+    "t": "No vendor or alias called \"Orchard Bay Hydraulics LLC\""
+   },
+   {
+    "s": "s",
+    "t": ""
+   },
+   {
+    "s": "s",
+    "t": ""
+   },
+   {
+    "s": "s",
+    "t": ""
+   },
+   {
+    "s": "s",
+    "t": ""
+   }
+  ],
+  "outcome": {
+   "kind": "hold",
+   "title": "Sent to a person",
+   "text": "Unrecognised vendor. If it is a new name for a known vendor, the reviewer confirms it and the alias is saved."
+  }
+ },
+ {
+  "id": "partial",
+  "title": "Partial delivery",
+  "sub": "Billed for what arrived",
+  "image": "demo/partial.png",
+  "imageW": 1100,
+  "imageH": 1274,
+  "vendor": "OmniFilter Technologies",
+  "invoice": "OT771290",
+  "po": "PO-57805",
+  "total": "$1,122.52",
+  "units": 38,
+  "decision": {
+   "action": "auto_clear",
+   "type": "none",
+   "path": "reasoning",
+   "reason": "Invoice OT771290 matches the received quantity of 38 units across 2 shipments with an explained partial shipment (2 of 3 expected). The prorated amount check shows variance_dollars of 0.00 with expected_amount of 1122.52 matching invoice_amount of 1122.52, within tolerance at 0.0000% variance. No exceptions require escalation."
+  },
+  "steps": [
+   {
+    "s": "p",
+    "t": "PDF attached, logged"
+   },
+   {
+    "s": "p",
+    "t": "38 units, $1,122.52"
+   },
+   {
+    "s": "p",
+    "t": "Exact vendor match, QuickBooks ID 153"
+   },
+   {
+    "s": "p",
+    "t": "PO for 47 units, 38 received in 2 shipments"
+   },
+   {
+    "s": "p",
+    "t": "Pro rata: 38 of 47 units = $1,122.52, $0.00 difference"
+   },
+   {
+    "s": "p",
+    "t": "38 billed, 38 received"
+   },
+   {
+    "s": "p",
+    "t": "No earlier twin"
+   }
+  ],
+  "outcome": {
+   "kind": "pay",
+   "title": "Paid automatically",
+   "text": "Partial shipment billed at the PO unit price for the 38 units received."
+  }
+ },
+ {
+  "id": "scan",
+  "title": "Poor scan",
+  "sub": "Too blurry to read",
+  "image": "demo/scan.png",
+  "imageW": 1100,
+  "imageH": 1394,
+  "vendor": "FlexiPack Solutions",
+  "invoice": "not readable",
+  "po": "not readable",
+  "total": null,
+  "units": null,
+  "decision": {
+   "action": "escalate",
+   "type": "not_invoice_review",
+   "path": "extraction"
+  },
+  "steps": [
+   {
+    "s": "p",
+    "t": "Scan attached, logged"
+   },
+   {
+    "s": "f",
+    "t": "Read as a statement; amount, date and lines too blurry to read"
+   },
+   {
+    "s": "s",
+    "t": ""
+   },
+   {
+    "s": "s",
+    "t": ""
+   },
+   {
+    "s": "s",
+    "t": ""
+   },
+   {
+    "s": "s",
+    "t": ""
+   },
+   {
+    "s": "s",
+    "t": ""
+   }
+  ],
+  "outcome": {
+   "kind": "hold",
+   "title": "Sent to a person",
+   "text": "The agent does not guess numbers. A person reads the scan."
+  }
+ },
+ {
+  "id": "stmt",
+  "title": "Account statement",
+  "sub": "A known miss",
+  "image": "demo/stmt.png",
+  "imageW": 1100,
+  "imageH": 1424,
+  "vendor": "Fortress Steel Corp",
+  "invoice": "SI-308147",
+  "po": "PO-77723",
+  "total": "$9,489.57",
+  "units": 189,
+  "decision": {
+   "action": "escalate",
+   "type": "not_invoice_review",
+   "path": "extraction"
+  },
+  "steps": [
+   {
+    "s": "p",
+    "t": "PDF attached, logged"
+   },
+   {
+    "s": "f",
+    "t": "Classed as a statement, not an invoice"
+   },
+   {
+    "s": "s",
+    "t": ""
+   },
+   {
+    "s": "s",
+    "t": ""
+   },
+   {
+    "s": "s",
+    "t": ""
+   },
+   {
+    "s": "s",
+    "t": ""
+   },
+   {
+    "s": "s",
+    "t": ""
+   }
+  ],
+  "outcome": {
+   "kind": "hold",
+   "title": "Sent to a person",
+   "text": "Policy says pay this one. Counted as an unnecessary escalation in the results: cautious, never a wrong payment."
+  }
+ }
+]

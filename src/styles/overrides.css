@@ -1,0 +1,4 @@
+/* The only deviation from the mockup CSS: the stamp sits at the bottom of the card so it never covers a real line item. */
+.stamp{top:auto;bottom:16px}
+/* Same three families as the mockup, served from this site instead of Google Fonts (faster, no third-party request). */
+:root{--display:"Bricolage Grotesque Variable","Bricolage Grotesque","Segoe UI",system-ui,sans-serif}
